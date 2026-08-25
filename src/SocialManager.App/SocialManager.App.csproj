@@ -8,6 +8,11 @@
     <UseWPF>true</UseWPF>
     <AssemblyName>SocialManager</AssemblyName>
     <RootNamespace>SocialManager.App</RootNamespace>
+    <ApplicationIcon>Assets\AppIcon.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\AppIcon.ico" />
+  </ItemGroup>
 
 </Project>
