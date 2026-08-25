@@ -1,31 +1,18 @@
 # SocialManager
 
-Desktop social-media manager for the **Kid D** project.
+SocialManager is a WPF/.NET desktop manager for the Kid D project. It will prepare, schedule, publish and analyse content across TikTok, Instagram and YouTube.
 
-The application is being built as a WPF/MVVM desktop app for Visual Studio 2026. Its goal is to turn raw creative material (illustrations, music and short animation) plus a spoken explanation into platform-specific publishing plans for TikTok, Instagram and YouTube.
+## Current UI
 
-## Current milestone
+- Kid D dashboard in red / black / white.
+- Voice-manager entry point prepared for local transcription + LLaMA.
+- Network status, queue and smart-planner placeholders.
+- Options screen with four persistent themes: Kid D, Instagram, TikTok and YouTube.
+- Custom Kid D application icon.
 
-**Milestone 1 — Interface prototype**
-
-- Dashboard focused on the Kid D workflow.
-- Content queue and upcoming publication overview.
-- Voice-manager entry point.
-- TikTok / Instagram / YouTube connection cards.
-- Recent content preview area.
-- MVVM structure with no UI logic in code-behind.
-
-## Planned next steps
-
-1. Local content library and file import.
-2. Voice capture and local transcription.
-3. LLaMA integration for content understanding and platform copy.
-4. Platform account connections and publishing APIs.
-5. Analytics collection and schedule optimisation.
-6. Community-management workflow.
-
-## Requirements
+## Stack
 
 - Visual Studio 2026
-- .NET 10 SDK
-- Windows 10/11
+- .NET 10
+- WPF
+- MVVM
