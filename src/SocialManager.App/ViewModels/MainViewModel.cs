@@ -8,6 +8,8 @@ namespace SocialManager.App.ViewModels;
 public sealed class MainViewModel : ObservableObject
 {
     private bool _isListening;
+    private bool _isOptionsVisible;
+    private string _selectedTheme = ThemeManager.CurrentTheme;
     private string _activityMessage = "Añade un dibujo, una canción o una animación para empezar.";
 
     public MainViewModel()
@@ -16,7 +18,7 @@ public sealed class MainViewModel : ObservableObject
         {
             new("TikTok", "Kid D", "Pendiente de conectar", "#7D8597", "#25F4EE"),
             new("Instagram", "Kid D", "Pendiente de conectar", "#7D8597", "#E1306C"),
-            new("YouTube", "Kid D", "Pendiente de conectar", "#7D8597", "#FF453A")
+            new("YouTube", "Kid D", "Pendiente de conectar", "#7D8597", "#FF0000")
         };
 
         ToggleVoiceCommand = new RelayCommand(ToggleVoice);
@@ -24,6 +26,9 @@ public sealed class MainViewModel : ObservableObject
             ActivityMessage = "El selector de archivos será el siguiente módulo que conectemos.");
         OpenPlannerCommand = new RelayCommand(() =>
             ActivityMessage = "El calendario inteligente todavía no tiene publicaciones programadas.");
+        OpenHomeCommand = new RelayCommand(() => IsOptionsVisible = false);
+        OpenOptionsCommand = new RelayCommand(() => IsOptionsVisible = true);
+        SetThemeCommand = new RelayCommand(parameter => SelectTheme(parameter?.ToString() ?? "Kid D"));
     }
 
     public string ProjectName => "KID D";
@@ -42,6 +47,18 @@ public sealed class MainViewModel : ObservableObject
 
     public ObservableCollection<NetworkStatus> Networks { get; }
 
+    public bool IsOptionsVisible
+    {
+        get => _isOptionsVisible;
+        private set => SetProperty(ref _isOptionsVisible, value);
+    }
+
+    public string SelectedTheme
+    {
+        get => _selectedTheme;
+        private set => SetProperty(ref _selectedTheme, value);
+    }
+
     public string ActivityMessage
     {
         get => _activityMessage;
@@ -51,6 +68,15 @@ public sealed class MainViewModel : ObservableObject
     public ICommand ToggleVoiceCommand { get; }
     public ICommand AddContentCommand { get; }
     public ICommand OpenPlannerCommand { get; }
+    public ICommand OpenHomeCommand { get; }
+    public ICommand OpenOptionsCommand { get; }
+    public ICommand SetThemeCommand { get; }
+
+    private void SelectTheme(string themeName)
+    {
+        ThemeManager.Apply(themeName);
+        SelectedTheme = ThemeManager.CurrentTheme;
+    }
 
     private void ToggleVoice()
     {
