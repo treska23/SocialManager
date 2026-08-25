@@ -6,7 +6,8 @@
         xmlns:vm="clr-namespace:SocialManager.App.ViewModels"
         mc:Ignorable="d"
         Title="Kid D — Social Manager"
-        Width="1440" Height="900" MinWidth="1180" MinHeight="720"
+        Width="1440" Height="900"
+        MinWidth="1040" MinHeight="720"
         Icon="/Assets/AppIcon.ico"
         WindowStartupLocation="CenterScreen">
 
@@ -16,14 +17,15 @@
 
     <Grid Background="{DynamicResource AppBackgroundBrush}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="238" />
+            <ColumnDefinition Width="220" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <!-- Navigation -->
-        <Border Grid.Column="0" Background="{DynamicResource SidebarBrush}"
-                BorderBrush="{DynamicResource BorderBrush}" BorderThickness="0,0,1,0">
-            <Grid Margin="18,22,18,18">
+        <Border Grid.Column="0"
+                Background="{DynamicResource SidebarBrush}"
+                BorderBrush="{DynamicResource BorderBrush}"
+                BorderThickness="0,0,1,0">
+            <Grid Margin="16,20,16,16">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
@@ -31,64 +33,124 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <Grid Margin="4,0,4,28">
+                <Grid Margin="4,0,4,24">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="44" />
+                        <ColumnDefinition Width="42" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Border Width="38" Height="38" CornerRadius="10" Background="{DynamicResource BrandBrush}">
-                        <TextBlock Text="KD" Foreground="White" FontSize="14" FontWeight="Black"
-                                   HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+                    <Border Width="36" Height="36"
+                            CornerRadius="9"
+                            Background="{DynamicResource BrandBrush}">
+                        <TextBlock Text="KD"
+                                   Foreground="White"
+                                   FontSize="13"
+                                   FontWeight="Black"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" />
                     </Border>
-                    <StackPanel Grid.Column="1" Margin="10,0,0,0" VerticalAlignment="Center">
-                        <TextBlock Text="KID D" FontWeight="Black" FontSize="14" Foreground="{DynamicResource TextBrush}" />
-                        <TextBlock Text="SOCIAL MANAGER" Foreground="{DynamicResource MutedTextBrush}" FontSize="9" FontWeight="SemiBold" />
+
+                    <StackPanel Grid.Column="1"
+                                Margin="9,0,0,0"
+                                VerticalAlignment="Center">
+                        <TextBlock Text="KID D"
+                                   FontWeight="Black"
+                                   FontSize="14"
+                                   Foreground="{DynamicResource TextBrush}" />
+                        <TextBlock Text="SOCIAL MANAGER"
+                                   Foreground="{DynamicResource MutedTextBrush}"
+                                   FontSize="9"
+                                   FontWeight="SemiBold" />
                     </StackPanel>
                 </Grid>
 
                 <StackPanel Grid.Row="1">
-                    <TextBlock Text="ESPACIO DE TRABAJO" Foreground="{DynamicResource MutedTextBrush}"
-                               FontSize="10" FontWeight="Bold" Margin="16,0,0,8" />
-                    <Button Content="Inicio" Style="{StaticResource NavButtonStyle}" Command="{Binding OpenHomeCommand}" Margin="0,2" />
-                    <Button Content="Contenido" Style="{StaticResource NavButtonStyle}" Margin="0,2" IsEnabled="False" />
-                    <Button Content="Calendario" Style="{StaticResource NavButtonStyle}" Margin="0,2" IsEnabled="False" />
-                    <Button Content="Publicaciones" Style="{StaticResource NavButtonStyle}" Margin="0,2" IsEnabled="False" />
-                    <Button Content="Comunidad" Style="{StaticResource NavButtonStyle}" Margin="0,2" IsEnabled="False" />
-                    <Button Content="Analítica" Style="{StaticResource NavButtonStyle}" Margin="0,2" IsEnabled="False" />
+                    <TextBlock Text="ESPACIO DE TRABAJO"
+                               Foreground="{DynamicResource MutedTextBrush}"
+                               FontSize="10"
+                               FontWeight="Bold"
+                               Margin="16,0,0,8" />
+                    <Button Content="Inicio"
+                            Style="{StaticResource NavButtonStyle}"
+                            Command="{Binding OpenHomeCommand}"
+                            Margin="0,2" />
+                    <Button Content="Contenido"
+                            Style="{StaticResource NavButtonStyle}"
+                            Margin="0,2"
+                            IsEnabled="False" />
+                    <Button Content="Calendario"
+                            Style="{StaticResource NavButtonStyle}"
+                            Margin="0,2"
+                            IsEnabled="False" />
+                    <Button Content="Publicaciones"
+                            Style="{StaticResource NavButtonStyle}"
+                            Margin="0,2"
+                            IsEnabled="False" />
+                    <Button Content="Comunidad"
+                            Style="{StaticResource NavButtonStyle}"
+                            Margin="0,2"
+                            IsEnabled="False" />
+                    <Button Content="Analítica"
+                            Style="{StaticResource NavButtonStyle}"
+                            Margin="0,2"
+                            IsEnabled="False" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="3">
-                    <Border Background="{DynamicResource InnerPanelBrush}" BorderBrush="{DynamicResource BorderBrush}"
-                            BorderThickness="1" CornerRadius="10" Padding="12" Margin="0,0,0,8">
+                    <Border Background="{DynamicResource InnerPanelBrush}"
+                            BorderBrush="{DynamicResource BorderBrush}"
+                            BorderThickness="1"
+                            CornerRadius="10"
+                            Padding="12"
+                            Margin="0,0,0,8">
                         <StackPanel>
-                            <TextBlock Text="MANAGER" FontSize="10" FontWeight="Bold" Foreground="{DynamicResource MutedTextBrush}" />
+                            <TextBlock Text="MANAGER"
+                                       FontSize="10"
+                                       FontWeight="Bold"
+                                       Foreground="{DynamicResource MutedTextBrush}" />
                             <StackPanel Orientation="Horizontal" Margin="0,6,0,0">
-                                <Ellipse Width="7" Height="7" Fill="{DynamicResource AccentBrush}" Margin="0,0,7,0" />
-                                <TextBlock Text="{Binding ManagerStatus}" FontSize="12" FontWeight="SemiBold" Foreground="{DynamicResource TextBrush}" />
+                                <Ellipse Width="7" Height="7"
+                                         Fill="{DynamicResource AccentBrush}"
+                                         Margin="0,0,7,0" />
+                                <TextBlock Text="{Binding ManagerStatus}"
+                                           FontSize="12"
+                                           FontWeight="SemiBold"
+                                           Foreground="{DynamicResource TextBrush}" />
                             </StackPanel>
                         </StackPanel>
                     </Border>
-                    <Button Content="Opciones" Style="{StaticResource NavButtonStyle}" Command="{Binding OpenOptionsCommand}" />
-                    <TextBlock Text="SocialManager · UI v0.2" Foreground="{DynamicResource MutedTextBrush}" FontSize="10" Margin="16,8,0,0" />
+
+                    <Button Content="Opciones"
+                            Style="{StaticResource NavButtonStyle}"
+                            Command="{Binding OpenOptionsCommand}" />
+
+                    <TextBlock Text="SocialManager · UI v0.3"
+                               Foreground="{DynamicResource MutedTextBrush}"
+                               FontSize="10"
+                               Margin="16,8,0,0" />
                 </StackPanel>
             </Grid>
         </Border>
 
-        <!-- Workspace -->
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="72" />
+                <RowDefinition Height="68" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <Border Background="{DynamicResource TopBarBrush}" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="0,0,0,1">
-                <Grid Margin="32,0">
+            <Border Background="{DynamicResource TopBarBrush}"
+                    BorderBrush="{DynamicResource BorderBrush}"
+                    BorderThickness="0,0,0,1">
+                <Grid Margin="28,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
+
                     <StackPanel VerticalAlignment="Center">
-                        <TextBlock FontSize="18" FontWeight="Bold" Foreground="{DynamicResource TextBrush}">
+                        <TextBlock FontSize="18"
+                                   FontWeight="Bold"
+                                   Foreground="{DynamicResource TextBrush}">
                             <TextBlock.Style>
                                 <Style TargetType="TextBlock">
                                     <Setter Property="Text" Value="Inicio" />
@@ -100,7 +162,10 @@
                                 </Style>
                             </TextBlock.Style>
                         </TextBlock>
-                        <TextBlock FontSize="11" Margin="0,2,0,0" Foreground="{DynamicResource MutedTextBrush}">
+
+                        <TextBlock FontSize="11"
+                                   Margin="0,2,0,0"
+                                   Foreground="{DynamicResource MutedTextBrush}">
                             <TextBlock.Style>
                                 <Style TargetType="TextBlock">
                                     <Setter Property="Text" Value="Centro de control de Kid D" />
@@ -113,253 +178,585 @@
                             </TextBlock.Style>
                         </TextBlock>
                     </StackPanel>
-                    <Button Grid.Column="1" Content="+  AÑADIR CONTENIDO" Style="{StaticResource PrimaryButtonStyle}"
-                            Command="{Binding AddContentCommand}" VerticalAlignment="Center" />
+
+                    <Button Grid.Column="1"
+                            Content="+  AÑADIR CONTENIDO"
+                            Style="{StaticResource PrimaryButtonStyle}"
+                            Command="{Binding AddContentCommand}"
+                            VerticalAlignment="Center" />
                 </Grid>
             </Border>
 
-            <Grid Grid.Row="1">
-                <!-- Home -->
-                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-                    <ScrollViewer.Style>
-                        <Style TargetType="ScrollViewer">
-                            <Setter Property="Visibility" Value="Visible" />
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding IsOptionsVisible}" Value="True">
-                                    <Setter Property="Visibility" Value="Collapsed" />
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </ScrollViewer.Style>
-                    <StackPanel Margin="32,30,32,36">
-                        <Border Style="{StaticResource CardStyle}" Padding="28" Margin="0,0,0,18">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="360" />
-                                </Grid.ColumnDefinitions>
-                                <StackPanel Margin="0,4,36,4" VerticalAlignment="Center">
-                                    <TextBlock Text="MANAGER CREATIVO" Style="{StaticResource EyebrowTextStyle}" />
-                                    <TextBlock Text="Cuéntale qué has creado.&#10;Él se ocupa de moverlo."
-                                               Foreground="{DynamicResource TextBrush}" FontSize="31" FontWeight="Black"
-                                               LineHeight="38" Margin="0,12,0,12" />
-                                    <TextBlock Text="{Binding VoiceHint}" Foreground="{DynamicResource MutedTextBrush}"
-                                               FontSize="14" TextWrapping="Wrap" MaxWidth="650" HorizontalAlignment="Left" />
-                                    <StackPanel Orientation="Horizontal" Margin="0,24,0,0">
-                                        <Button Content="{Binding VoiceButtonText}" Style="{StaticResource PrimaryButtonStyle}"
-                                                Command="{Binding ToggleVoiceCommand}" Padding="22,13" />
-                                        <TextBlock Text="voz → contexto → LLaMA → publicación"
-                                                   Foreground="{DynamicResource MutedTextBrush}" FontSize="11"
-                                                   VerticalAlignment="Center" Margin="14,0,0,0" />
-                                    </StackPanel>
-                                </StackPanel>
+            <Grid Grid.Row="1" Margin="28,24,28,28">
+                <Grid.Style>
+                    <Style TargetType="Grid">
+                        <Setter Property="Visibility" Value="Visible" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsOptionsVisible}" Value="True">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
 
-                                <Border Grid.Column="1" Background="{DynamicResource InnerPanelBrush}"
-                                        BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1"
-                                        CornerRadius="14" Padding="22">
-                                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                                        <Border Width="90" Height="90" CornerRadius="45"
-                                                Background="{DynamicResource AccentDarkBrush}"
-                                                BorderBrush="{DynamicResource AccentBrush}" BorderThickness="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.05*" MinHeight="205" />
+                    <RowDefinition Height="16" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="16" />
+                    <RowDefinition Height="*" MinHeight="205" />
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0"
+                        Style="{StaticResource CardStyle}"
+                        Padding="26">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2.25*" />
+                            <ColumnDefinition Width="24" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel VerticalAlignment="Center">
+                            <TextBlock Text="MANAGER CREATIVO"
+                                       Style="{StaticResource EyebrowTextStyle}" />
+
+                            <TextBlock Text="Cuéntale qué has creado.&#10;Él se ocupa de moverlo."
+                                       Foreground="{DynamicResource TextBrush}"
+                                       FontSize="30"
+                                       FontWeight="Black"
+                                       LineHeight="37"
+                                       Margin="0,10,0,10" />
+
+                            <TextBlock Text="{Binding VoiceHint}"
+                                       Foreground="{DynamicResource MutedTextBrush}"
+                                       FontSize="13"
+                                       TextWrapping="Wrap"
+                                       MaxWidth="720"
+                                       HorizontalAlignment="Left" />
+
+                            <WrapPanel Margin="0,20,0,0">
+                                <Button Content="{Binding VoiceButtonText}"
+                                        Style="{StaticResource PrimaryButtonStyle}"
+                                        Command="{Binding ToggleVoiceCommand}"
+                                        Padding="20,12"
+                                        Margin="0,0,14,0" />
+                                <TextBlock Text="voz → contexto → LLaMA → publicación"
+                                           Foreground="{DynamicResource MutedTextBrush}"
+                                           FontSize="11"
+                                           VerticalAlignment="Center" />
+                            </WrapPanel>
+                        </StackPanel>
+
+                        <Border Grid.Column="2"
+                                Background="{DynamicResource InnerPanelBrush}"
+                                BorderBrush="{DynamicResource BorderBrush}"
+                                BorderThickness="1"
+                                CornerRadius="14"
+                                Padding="20">
+                            <StackPanel VerticalAlignment="Center"
+                                        HorizontalAlignment="Center">
+                                <Border Width="78" Height="78"
+                                        CornerRadius="39"
+                                        Background="{DynamicResource AccentDarkBrush}"
+                                        BorderBrush="{DynamicResource AccentBrush}"
+                                        BorderThickness="2">
+                                    <Grid>
+                                        <Ellipse Width="20" Height="20"
+                                                 Fill="{DynamicResource AccentBrush}" />
+                                        <Rectangle Width="6" Height="30"
+                                                   RadiusX="3" RadiusY="3"
+                                                   Fill="{DynamicResource AccentBrush}"
+                                                   VerticalAlignment="Center"
+                                                   Margin="0,27,0,0" />
+                                    </Grid>
+                                </Border>
+
+                                <TextBlock Text="VOZ"
+                                           Foreground="{DynamicResource AccentBrush}"
+                                           FontSize="10"
+                                           FontWeight="Bold"
+                                           Margin="0,10,0,5" />
+
+                                <TextBlock Text="{Binding ActivityMessage}"
+                                           Foreground="{DynamicResource MutedTextBrush}"
+                                           FontSize="11"
+                                           TextWrapping="Wrap"
+                                           TextAlignment="Center"
+                                           MaxWidth="300" />
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </Border>
+
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="12" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="12" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0"
+                            Style="{StaticResource CardStyle}"
+                            Padding="17">
+                        <StackPanel>
+                            <TextBlock Text="EN COLA"
+                                       Foreground="{DynamicResource MutedTextBrush}"
+                                       FontSize="10"
+                                       FontWeight="Bold" />
+                            <TextBlock Text="{Binding QueueCount}"
+                                       Foreground="{DynamicResource TextBrush}"
+                                       FontSize="28"
+                                       FontWeight="Black"
+                                       Margin="0,4,0,0" />
+                            <TextBlock Text="contenidos pendientes"
+                                       Foreground="{DynamicResource MutedTextBrush}"
+                                       FontSize="11" />
+                        </StackPanel>
+                    </Border>
+
+                    <Border Grid.Column="2"
+                            Style="{StaticResource CardStyle}"
+                            Padding="17">
+                        <StackPanel>
+                            <TextBlock Text="BORRADORES"
+                                       Foreground="{DynamicResource MutedTextBrush}"
+                                       FontSize="10"
+                                       FontWeight="Bold" />
+                            <TextBlock Text="{Binding DraftCount}"
+                                       Foreground="{DynamicResource TextBrush}"
+                                       FontSize="28"
+                                       FontWeight="Black"
+                                       Margin="0,4,0,0" />
+                            <TextBlock Text="esperando revisión"
+                                       Foreground="{DynamicResource MutedTextBrush}"
+                                       FontSize="11" />
+                        </StackPanel>
+                    </Border>
+
+                    <Border Grid.Column="4"
+                            Style="{StaticResource CardStyle}"
+                            Padding="17">
+                        <StackPanel VerticalAlignment="Center">
+                            <TextBlock Text="PRÓXIMA PUBLICACIÓN"
+                                       Foreground="{DynamicResource MutedTextBrush}"
+                                       FontSize="10"
+                                       FontWeight="Bold" />
+                            <TextBlock Text="{Binding NextPostTitle}"
+                                       Foreground="{DynamicResource TextBrush}"
+                                       FontSize="14"
+                                       FontWeight="SemiBold"
+                                       Margin="0,6,0,2"
+                                       TextTrimming="CharacterEllipsis" />
+                            <TextBlock Text="{Binding NextPostTime}"
+                                       Foreground="{DynamicResource MutedTextBrush}"
+                                       FontSize="11"
+                                       TextTrimming="CharacterEllipsis" />
+                        </StackPanel>
+                    </Border>
+                </Grid>
+
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1.15*" />
+                        <ColumnDefinition Width="16" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0"
+                            Style="{StaticResource CardStyle}"
+                            Padding="20">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Text="Redes"
+                                       Foreground="{DynamicResource TextBrush}"
+                                       FontSize="17"
+                                       FontWeight="Bold"
+                                       Margin="0,0,0,14" />
+
+                            <ItemsControl Grid.Row="1"
+                                          ItemsSource="{Binding Networks}"
+                                          VerticalAlignment="Top">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Background="{DynamicResource InnerPanelBrush}"
+                                                BorderBrush="{DynamicResource BorderBrush}"
+                                                BorderThickness="1"
+                                                CornerRadius="10"
+                                                Padding="13"
+                                                Margin="0,0,0,8">
                                             <Grid>
-                                                <Ellipse Width="22" Height="22" Fill="{DynamicResource AccentBrush}" />
-                                                <Rectangle Width="6" Height="34" RadiusX="3" RadiusY="3"
-                                                           Fill="{DynamicResource AccentBrush}" VerticalAlignment="Center" Margin="0,31,0,0" />
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="5" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <Border Background="{Binding AccentColor}"
+                                                        CornerRadius="3" />
+
+                                                <StackPanel Grid.Column="1"
+                                                            Margin="12,0,0,0">
+                                                    <TextBlock Text="{Binding Name}"
+                                                               Foreground="{DynamicResource TextBrush}"
+                                                               FontSize="13"
+                                                               FontWeight="SemiBold" />
+                                                    <TextBlock Text="{Binding Handle}"
+                                                               Foreground="{DynamicResource MutedTextBrush}"
+                                                               FontSize="10"
+                                                               Margin="0,2,0,0" />
+                                                </StackPanel>
+
+                                                <TextBlock Grid.Column="2"
+                                                           Text="{Binding Status}"
+                                                           Foreground="{DynamicResource MutedTextBrush}"
+                                                           FontSize="10"
+                                                           VerticalAlignment="Center" />
                                             </Grid>
                                         </Border>
-                                        <TextBlock Text="VOZ" Foreground="{DynamicResource AccentBrush}" FontSize="11" FontWeight="Bold" Margin="0,12,0,6" />
-                                        <TextBlock Text="{Binding ActivityMessage}" Foreground="{DynamicResource MutedTextBrush}"
-                                                   FontSize="11" TextWrapping="Wrap" TextAlignment="Center" MaxWidth="280" />
-                                    </StackPanel>
-                                </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </Grid>
+                    </Border>
+
+                    <Border Grid.Column="2"
+                            Style="{StaticResource CardStyle}"
+                            Padding="20">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Text="Planificador inteligente"
+                                       Foreground="{DynamicResource TextBrush}"
+                                       FontSize="17"
+                                       FontWeight="Bold" />
+
+                            <TextBlock Grid.Row="1"
+                                       Text="Aprenderá de Kid D y de cada plataforma para decidir cuándo publicar."
+                                       Foreground="{DynamicResource MutedTextBrush}"
+                                       TextWrapping="Wrap"
+                                       Margin="0,6,0,12" />
+
+                            <Border Grid.Row="2"
+                                    Background="{DynamicResource InnerPanelBrush}"
+                                    BorderBrush="{DynamicResource BorderBrush}"
+                                    BorderThickness="1"
+                                    CornerRadius="11"
+                                    Padding="16"
+                                    Margin="0,0,0,12">
+                                <StackPanel VerticalAlignment="Center">
+                                    <TextBlock Text="SIN DATOS TODAVÍA"
+                                               FontSize="10"
+                                               FontWeight="Bold"
+                                               Foreground="{DynamicResource AccentBrush}" />
+                                    <TextBlock Text="Aquí aparecerán las mejores franjas de TikTok, Instagram y YouTube."
+                                               Foreground="{DynamicResource MutedTextBrush}"
+                                               TextWrapping="Wrap"
+                                               Margin="0,7,0,0" />
+                                </StackPanel>
+                            </Border>
+
+                            <Button Grid.Row="3"
+                                    Content="ABRIR CALENDARIO"
+                                    Style="{StaticResource SecondaryButtonStyle}"
+                                    Command="{Binding OpenPlannerCommand}"
+                                    HorizontalAlignment="Left" />
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="1" Margin="28,24,28,28">
+                <Grid.Style>
+                    <Style TargetType="Grid">
+                        <Setter Property="Visibility" Value="Collapsed" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsOptionsVisible}" Value="True">
+                                <Setter Property="Visibility" Value="Visible" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="18" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="18" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <StackPanel>
+                    <TextBlock Text="TEMA DE LA APLICACIÓN"
+                               Style="{StaticResource EyebrowTextStyle}" />
+                    <TextBlock Text="Elige la identidad visual de SocialManager."
+                               Foreground="{DynamicResource TextBrush}"
+                               FontSize="27"
+                               FontWeight="Black"
+                               Margin="0,8,0,5" />
+                    <TextBlock Text="El cambio se aplica al instante y se conserva al volver a abrir el programa."
+                               Foreground="{DynamicResource MutedTextBrush}"
+                               FontSize="13" />
+                </StackPanel>
+
+                <UniformGrid Grid.Row="2"
+                             Columns="2"
+                             Rows="2">
+                    <Button Command="{Binding SetThemeCommand}"
+                            CommandParameter="Kid D"
+                            Margin="0,0,8,8"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Padding="0"
+                            Cursor="Hand">
+                        <Border Background="#111111"
+                                BorderBrush="#D71920"
+                                BorderThickness="2"
+                                CornerRadius="16"
+                                Padding="20">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Text="KID D"
+                                           Foreground="White"
+                                           FontSize="19"
+                                           FontWeight="Black" />
+
+                                <Grid Grid.Row="1" Margin="0,14">
+                                    <Rectangle Fill="#080808"
+                                               RadiusX="10"
+                                               RadiusY="10" />
+                                    <Rectangle Width="150"
+                                               Height="12"
+                                               Fill="#D71920"
+                                               RadiusX="6"
+                                               RadiusY="6"
+                                               HorizontalAlignment="Left"
+                                               Margin="18,0,0,22" />
+                                    <Rectangle Width="215"
+                                               Height="7"
+                                               Fill="White"
+                                               RadiusX="4"
+                                               RadiusY="4"
+                                               HorizontalAlignment="Left"
+                                               Margin="18,24,0,0" />
+                                </Grid>
+
+                                <TextBlock Grid.Row="2"
+                                           Text="Rojo · negro · blanco"
+                                           Foreground="#D0D0D0"
+                                           FontSize="12" />
                             </Grid>
                         </Border>
+                    </Button>
 
-                        <Grid Margin="0,0,0,18">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="12" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="12" />
-                                <ColumnDefinition Width="2*" />
-                            </Grid.ColumnDefinitions>
-                            <Border Grid.Column="0" Style="{StaticResource CardStyle}" Padding="18">
-                                <StackPanel>
-                                    <TextBlock Text="EN COLA" Foreground="{DynamicResource MutedTextBrush}" FontSize="10" FontWeight="Bold" />
-                                    <TextBlock Text="{Binding QueueCount}" Foreground="{DynamicResource TextBrush}" FontSize="30" FontWeight="Black" Margin="0,5,0,0" />
-                                    <TextBlock Text="contenidos pendientes" Foreground="{DynamicResource MutedTextBrush}" FontSize="11" />
-                                </StackPanel>
-                            </Border>
-                            <Border Grid.Column="2" Style="{StaticResource CardStyle}" Padding="18">
-                                <StackPanel>
-                                    <TextBlock Text="BORRADORES" Foreground="{DynamicResource MutedTextBrush}" FontSize="10" FontWeight="Bold" />
-                                    <TextBlock Text="{Binding DraftCount}" Foreground="{DynamicResource TextBrush}" FontSize="30" FontWeight="Black" Margin="0,5,0,0" />
-                                    <TextBlock Text="esperando revisión" Foreground="{DynamicResource MutedTextBrush}" FontSize="11" />
-                                </StackPanel>
-                            </Border>
-                            <Border Grid.Column="4" Style="{StaticResource CardStyle}" Padding="18">
-                                <StackPanel>
-                                    <TextBlock Text="PRÓXIMA PUBLICACIÓN" Foreground="{DynamicResource MutedTextBrush}" FontSize="10" FontWeight="Bold" />
-                                    <TextBlock Text="{Binding NextPostTitle}" Foreground="{DynamicResource TextBrush}" FontSize="15" FontWeight="SemiBold" Margin="0,7,0,3" />
-                                    <TextBlock Text="{Binding NextPostTime}" Foreground="{DynamicResource MutedTextBrush}" FontSize="11" />
-                                </StackPanel>
-                            </Border>
-                        </Grid>
+                    <Button Command="{Binding SetThemeCommand}"
+                            CommandParameter="Instagram"
+                            Margin="8,0,0,8"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Padding="0"
+                            Cursor="Hand">
+                        <Border BorderBrush="#E1306C"
+                                BorderThickness="2"
+                                CornerRadius="16"
+                                Padding="20">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                                    <GradientStop Color="#120A18" Offset="0" />
+                                    <GradientStop Color="#29102D" Offset="1" />
+                                </LinearGradientBrush>
+                            </Border.Background>
 
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="1.2*" />
-                                <ColumnDefinition Width="18" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Border Grid.Column="0" Style="{StaticResource CardStyle}" Padding="22">
-                                <StackPanel>
-                                    <TextBlock Text="Redes" Foreground="{DynamicResource TextBrush}" FontSize="17" FontWeight="Bold" Margin="0,0,0,16" />
-                                    <ItemsControl ItemsSource="{Binding Networks}">
-                                        <ItemsControl.ItemTemplate>
-                                            <DataTemplate>
-                                                <Border Background="{DynamicResource InnerPanelBrush}" BorderBrush="{DynamicResource BorderBrush}"
-                                                        BorderThickness="1" CornerRadius="10" Padding="14" Margin="0,0,0,9">
-                                                    <Grid>
-                                                        <Grid.ColumnDefinitions>
-                                                            <ColumnDefinition Width="5" /><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" />
-                                                        </Grid.ColumnDefinitions>
-                                                        <Border Background="{Binding AccentColor}" CornerRadius="3" />
-                                                        <StackPanel Grid.Column="1" Margin="13,0,0,0">
-                                                            <TextBlock Text="{Binding Name}" Foreground="{DynamicResource TextBrush}" FontSize="13" FontWeight="SemiBold" />
-                                                            <TextBlock Text="{Binding Handle}" Foreground="{DynamicResource MutedTextBrush}" FontSize="10" Margin="0,2,0,0" />
-                                                        </StackPanel>
-                                                        <TextBlock Grid.Column="2" Text="{Binding Status}" Foreground="{DynamicResource MutedTextBrush}" FontSize="10" VerticalAlignment="Center" />
-                                                    </Grid>
-                                                </Border>
-                                            </DataTemplate>
-                                        </ItemsControl.ItemTemplate>
-                                    </ItemsControl>
-                                </StackPanel>
-                            </Border>
-                            <Border Grid.Column="2" Style="{StaticResource CardStyle}" Padding="22">
-                                <StackPanel>
-                                    <TextBlock Text="Planificador inteligente" Foreground="{DynamicResource TextBrush}" FontSize="17" FontWeight="Bold" />
-                                    <TextBlock Text="Aprenderá de Kid D y de cada plataforma para decidir cuándo publicar."
-                                               Foreground="{DynamicResource MutedTextBrush}" TextWrapping="Wrap" Margin="0,7,0,18" />
-                                    <Border Background="{DynamicResource InnerPanelBrush}" BorderBrush="{DynamicResource BorderBrush}"
-                                            BorderThickness="1" CornerRadius="11" Padding="16" Margin="0,0,0,14">
-                                        <StackPanel>
-                                            <TextBlock Text="SIN DATOS TODAVÍA" FontSize="10" FontWeight="Bold" Foreground="{DynamicResource AccentBrush}" />
-                                            <TextBlock Text="Aquí aparecerán las mejores franjas de TikTok, Instagram y YouTube."
-                                                       Foreground="{DynamicResource MutedTextBrush}" TextWrapping="Wrap" Margin="0,7,0,0" />
-                                        </StackPanel>
-                                    </Border>
-                                    <Button Content="ABRIR CALENDARIO" Style="{StaticResource SecondaryButtonStyle}"
-                                            Command="{Binding OpenPlannerCommand}" HorizontalAlignment="Left" />
-                                </StackPanel>
-                            </Border>
-                        </Grid>
-                    </StackPanel>
-                </ScrollViewer>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
 
-                <!-- Options -->
-                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-                    <ScrollViewer.Style>
-                        <Style TargetType="ScrollViewer">
-                            <Setter Property="Visibility" Value="Collapsed" />
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding IsOptionsVisible}" Value="True">
-                                    <Setter Property="Visibility" Value="Visible" />
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </ScrollViewer.Style>
-                    <StackPanel Margin="32,30,32,36">
-                        <TextBlock Text="TEMA DE LA APLICACIÓN" Style="{StaticResource EyebrowTextStyle}" />
-                        <TextBlock Text="Elige la identidad visual de SocialManager." Foreground="{DynamicResource TextBrush}"
-                                   FontSize="28" FontWeight="Black" Margin="0,10,0,6" />
-                        <TextBlock Text="El cambio se aplica al instante y se conserva al volver a abrir el programa."
-                                   Foreground="{DynamicResource MutedTextBrush}" FontSize="13" Margin="0,0,0,24" />
+                                <TextBlock Text="INSTAGRAM"
+                                           Foreground="White"
+                                           FontSize="19"
+                                           FontWeight="Bold" />
 
-                        <UniformGrid Columns="2" Rows="2">
-                            <Button Command="{Binding SetThemeCommand}" CommandParameter="Kid D" Margin="0,0,10,10" Background="Transparent" BorderThickness="0" Padding="0" Cursor="Hand">
-                                <Border Background="#111111" BorderBrush="#D71920" BorderThickness="2" CornerRadius="16" Padding="22" Height="210">
-                                    <Grid>
-                                        <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
-                                        <TextBlock Text="KID D" Foreground="White" FontSize="19" FontWeight="Black" />
-                                        <Grid Grid.Row="1" Margin="0,18">
-                                            <Rectangle Fill="#080808" RadiusX="10" RadiusY="10" />
-                                            <Rectangle Width="150" Height="12" Fill="#D71920" RadiusX="6" RadiusY="6" HorizontalAlignment="Left" Margin="18,0,0,22" />
-                                            <Rectangle Width="215" Height="7" Fill="White" RadiusX="4" RadiusY="4" HorizontalAlignment="Left" Margin="18,24,0,0" />
-                                        </Grid>
-                                        <TextBlock Grid.Row="2" Text="Rojo · negro · blanco" Foreground="#D0D0D0" FontSize="12" />
-                                    </Grid>
-                                </Border>
-                            </Button>
-
-                            <Button Command="{Binding SetThemeCommand}" CommandParameter="Instagram" Margin="10,0,0,10" Background="Transparent" BorderThickness="0" Padding="0" Cursor="Hand">
-                                <Border BorderBrush="#E1306C" BorderThickness="2" CornerRadius="16" Padding="22" Height="210">
+                                <Border Grid.Row="1"
+                                        Margin="0,14"
+                                        CornerRadius="10">
                                     <Border.Background>
                                         <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
-                                            <GradientStop Color="#120A18" Offset="0" /><GradientStop Color="#29102D" Offset="1" />
+                                            <GradientStop Color="#833AB4" Offset="0" />
+                                            <GradientStop Color="#E1306C" Offset="0.55" />
+                                            <GradientStop Color="#F77737" Offset="1" />
                                         </LinearGradientBrush>
                                     </Border.Background>
-                                    <Grid>
-                                        <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
-                                        <TextBlock Text="INSTAGRAM" Foreground="White" FontSize="19" FontWeight="Bold" />
-                                        <Border Grid.Row="1" Margin="0,18" CornerRadius="10">
-                                            <Border.Background>
-                                                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
-                                                    <GradientStop Color="#833AB4" Offset="0"/><GradientStop Color="#E1306C" Offset="0.55"/><GradientStop Color="#F77737" Offset="1"/>
-                                                </LinearGradientBrush>
-                                            </Border.Background>
-                                            <TextBlock Text="◎" Foreground="White" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                        </Border>
-                                        <TextBlock Grid.Row="2" Text="Morado · magenta · naranja" Foreground="#F2DDE9" FontSize="12" />
-                                    </Grid>
-                                </Border>
-                            </Button>
 
-                            <Button Command="{Binding SetThemeCommand}" CommandParameter="TikTok" Margin="0,10,10,0" Background="Transparent" BorderThickness="0" Padding="0" Cursor="Hand">
-                                <Border Background="#080B0C" BorderBrush="#25F4EE" BorderThickness="2" CornerRadius="16" Padding="22" Height="210">
-                                    <Grid>
-                                        <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
-                                        <TextBlock Text="TIKTOK" Foreground="White" FontSize="19" FontWeight="Black" />
-                                        <Grid Grid.Row="1" Margin="0,18" Background="#101719">
-                                            <TextBlock Text="♪" Foreground="#FE2C55" FontSize="62" FontWeight="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8,6,0,0" />
-                                            <TextBlock Text="♪" Foreground="#25F4EE" FontSize="62" FontWeight="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-8,-6,0,0" />
-                                            <TextBlock Text="♪" Foreground="White" FontSize="62" FontWeight="Black" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                        </Grid>
-                                        <TextBlock Grid.Row="2" Text="Negro · cyan · rosa" Foreground="#C9F8F5" FontSize="12" />
-                                    </Grid>
+                                    <TextBlock Text="◎"
+                                               Foreground="White"
+                                               FontSize="50"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center" />
                                 </Border>
-                            </Button>
 
-                            <Button Command="{Binding SetThemeCommand}" CommandParameter="YouTube" Margin="10,10,0,0" Background="Transparent" BorderThickness="0" Padding="0" Cursor="Hand">
-                                <Border Background="#111111" BorderBrush="#FF0000" BorderThickness="2" CornerRadius="16" Padding="22" Height="210">
-                                    <Grid>
-                                        <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
-                                        <TextBlock Text="YOUTUBE" Foreground="White" FontSize="19" FontWeight="Bold" />
-                                        <Grid Grid.Row="1" Margin="0,18" Background="#080808">
-                                            <Border Width="92" Height="62" Background="#FF0000" CornerRadius="16" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                                <TextBlock Text="▶" Foreground="White" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4,0,0,0" />
-                                            </Border>
-                                        </Grid>
-                                        <TextBlock Grid.Row="2" Text="Rojo · negro · blanco" Foreground="#D8D8D8" FontSize="12" />
-                                    </Grid>
-                                </Border>
-                            </Button>
-                        </UniformGrid>
-
-                        <Border Style="{StaticResource CardStyle}" Margin="0,24,0,0" Padding="20">
-                            <Grid>
-                                <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
-                                <StackPanel>
-                                    <TextBlock Text="TEMA ACTIVO" Foreground="{DynamicResource MutedTextBrush}" FontSize="10" FontWeight="Bold" />
-                                    <TextBlock Text="{Binding SelectedTheme}" Foreground="{DynamicResource TextBrush}" FontSize="18" FontWeight="Bold" Margin="0,4,0,0" />
-                                </StackPanel>
-                                <Button Grid.Column="1" Content="VOLVER A INICIO" Style="{StaticResource SecondaryButtonStyle}"
-                                        Command="{Binding OpenHomeCommand}" VerticalAlignment="Center" />
+                                <TextBlock Grid.Row="2"
+                                           Text="Morado · magenta · naranja"
+                                           Foreground="#F2DDE9"
+                                           FontSize="12" />
                             </Grid>
                         </Border>
-                    </StackPanel>
-                </ScrollViewer>
+                    </Button>
+
+                    <Button Command="{Binding SetThemeCommand}"
+                            CommandParameter="TikTok"
+                            Margin="0,8,8,0"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Padding="0"
+                            Cursor="Hand">
+                        <Border Background="#080B0C"
+                                BorderBrush="#25F4EE"
+                                BorderThickness="2"
+                                CornerRadius="16"
+                                Padding="20">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Text="TIKTOK"
+                                           Foreground="White"
+                                           FontSize="19"
+                                           FontWeight="Black" />
+
+                                <Grid Grid.Row="1"
+                                      Margin="0,14"
+                                      Background="#101719">
+                                    <TextBlock Text="♪"
+                                               Foreground="#FE2C55"
+                                               FontSize="62"
+                                               FontWeight="Black"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               Margin="8,6,0,0" />
+                                    <TextBlock Text="♪"
+                                               Foreground="#25F4EE"
+                                               FontSize="62"
+                                               FontWeight="Black"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               Margin="-8,-6,0,0" />
+                                    <TextBlock Text="♪"
+                                               Foreground="White"
+                                               FontSize="62"
+                                               FontWeight="Black"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center" />
+                                </Grid>
+
+                                <TextBlock Grid.Row="2"
+                                           Text="Negro · cyan · rosa"
+                                           Foreground="#C9F8F5"
+                                           FontSize="12" />
+                            </Grid>
+                        </Border>
+                    </Button>
+
+                    <Button Command="{Binding SetThemeCommand}"
+                            CommandParameter="YouTube"
+                            Margin="8,8,0,0"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Padding="0"
+                            Cursor="Hand">
+                        <Border Background="#111111"
+                                BorderBrush="#FF0000"
+                                BorderThickness="2"
+                                CornerRadius="16"
+                                Padding="20">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Text="YOUTUBE"
+                                           Foreground="White"
+                                           FontSize="19"
+                                           FontWeight="Bold" />
+
+                                <Grid Grid.Row="1"
+                                      Margin="0,14"
+                                      Background="#080808">
+                                    <Border Width="92"
+                                            Height="62"
+                                            Background="#FF0000"
+                                            CornerRadius="16"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center">
+                                        <TextBlock Text="▶"
+                                                   Foreground="White"
+                                                   FontSize="28"
+                                                   HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center"
+                                                   Margin="4,0,0,0" />
+                                    </Border>
+                                </Grid>
+
+                                <TextBlock Grid.Row="2"
+                                           Text="Rojo · negro · blanco"
+                                           Foreground="#D8D8D8"
+                                           FontSize="12" />
+                            </Grid>
+                        </Border>
+                    </Button>
+                </UniformGrid>
+
+                <Border Grid.Row="4"
+                        Style="{StaticResource CardStyle}"
+                        Padding="18">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel>
+                            <TextBlock Text="TEMA ACTIVO"
+                                       Foreground="{DynamicResource MutedTextBrush}"
+                                       FontSize="10"
+                                       FontWeight="Bold" />
+                            <TextBlock Text="{Binding SelectedTheme}"
+                                       Foreground="{DynamicResource TextBrush}"
+                                       FontSize="18"
+                                       FontWeight="Bold"
+                                       Margin="0,4,0,0" />
+                        </StackPanel>
+
+                        <Button Grid.Column="1"
+                                Content="VOLVER A INICIO"
+                                Style="{StaticResource SecondaryButtonStyle}"
+                                Command="{Binding OpenHomeCommand}"
+                                VerticalAlignment="Center" />
+                    </Grid>
+                </Border>
             </Grid>
         </Grid>
     </Grid>
