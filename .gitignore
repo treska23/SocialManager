@@ -1,0 +1,32 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# Local AI models and generated media
+models/
+local-models/
+generated/
+exports/
+
+# Local secrets and tokens
+*.secrets.json
+appsettings.Local.json
+.env
+.env.*
+
+# OS
+Thumbs.db
+.DS_Store
